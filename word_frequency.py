@@ -18,14 +18,31 @@ Hints:
 """
 
 import sys
-
-text = alice_in_wonderland.txt
+import string
 
 def word_frequency(text):
-    frequencies = {} # Dictionary to store word frequencies
+    # make dictionary
+    frequencies = {}
 
-    if(length(text.split))
-    
+    #open file and read into words
+    text = open(sys.argv[1], 'r')
+    words = text.read()
+    text.close()
+    #convert all words to lowercase and separate file contents into list of words
+    words = words.lower()
+    words = words.split()
+
+    # repeat process until no words remain in text
+    while len(words)>0:
+        # take first word out of list and delete
+        f = words.pop(0)
+        f = f.strip(string.punctuation)
+        # increase count if already in dictionary, otherwise add it in
+        if f in frequencies: frequencies[f] = frequencies[f] + 1
+        else: frequencies[f] = 1
+
+    #alphebetize dictionary and print
+    frequencies = dict(sorted(frequencies.items()))
     return frequencies
 
 # Scaffold for opening a file and running word_frequency() on the contents
