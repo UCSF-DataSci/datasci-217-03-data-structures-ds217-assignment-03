@@ -23,8 +23,12 @@ def word_frequency(text):
     frequencies = {} # Dictionary to store word frequencies
 
     # Your code here
-    
-    return frequencies
+    words = text.lower().split()  # Split text into words, ignoring case
+    for word in words:
+        word = word.strip(".,!?\"'()[]{}:;")  # Remove common punctuation around words
+        if word:  # Ignore empty strings
+            frequencies[word] = frequencies.get(word, 0) + 1
+    return dict(sorted(frequencies.items()))
 
 # Scaffold for opening a file and running word_frequency() on the contents
 if __name__ == "__main__":
