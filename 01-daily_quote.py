@@ -24,7 +24,7 @@ quotes = [
 
 def get_quote_of_the_day(quotes):
     todays= date.today()
-    random.seed(today.toordinal())  # Seed based on the day’s date
+    random.seed(todays.toordinal())  # Seed based on the day’s date
     todays_quote = random.choice(quotes)  # Select a random quote from the list
 
     # Your code here
