@@ -16,11 +16,16 @@ from datetime import date
 
 
 quotes = [
-    # Create a list of quotes here
+    "The only limit to our realization of tomorrow is our doubts of today.",
+    "Do not wait to strike till the iron is hot; but make it hot by striking.",
+    "Whether you think you can, or you think you can’t – you’re right.",
+    "The future belongs to those who believe in the beauty of their dreams."
 ]
 
 def get_quote_of_the_day(quotes):
-    todays_quote = None
+    todays= date.today()
+    random.seed(todays.toordinal())  # Seed based on the day’s date
+    todays_quote = random.choice(quotes)  # Select a random quote from the list
 
     # Your code here
     
